@@ -1,11 +1,11 @@
-+ je recupere le nom de l'échantillon dans l'en-tête du BAM.
-+ j'extrais les reads avec une MAPQ>=30 et qui entourent l'intervalle `chr7:27_135_310-27_135_339` (pas de chevauchement partiel).
-+ Pour chaque read
-    + je récupère la sequence d'ADN du read
-    + je récupère la CIGAR string du read qui décrit les matchs/dels/ins
-    + je traverse la cigar strin et quand je suis uniquement dans l'interval chr7:27_135_310-27_135_339, je reconstitue la sequence d'ADN de cet intervalle
-    + l'ADN est reverse-complenté et traduit en peptide
-    + je scanne le peptide pour le transformer en 'symbole'
-+ chaque sequence d'ADN différente est comptée
-+ le séquences presentes <=2 fois sont ignorées
-+ les deux sequences restantes les plus fréquentes sont affichées
++ the sample names is extracted from the BAM metadata
++ reads having a MAPQ>=30 and surounding the interval `chr7:27_135_310-27_135_339` are considered (not partial overlap).
++ for each read
+    + the DNA Sequence of the read is extracted
+    + the cigar string describing matches/deletions/insertions is extracted
+    + the cigar string is scanned and , in the interval `chr7:27_135_310-27_135_339` we build the interval sequence.
+    + the DNA is reverse complemented (minus strand) and translated
+    + the peptide is scanned an its 'symbol' is extracted
++ each DNA sequence is counted
++ DNA sequences with occurence <=2 are discarded.
++ The two most frequent Sequences are displayed.
