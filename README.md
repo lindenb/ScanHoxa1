@@ -1,3 +1,9 @@
+
+
+[![DOI](https://zenodo.org/badge/599663626.svg)](https://zenodo.org/badge/latestdoi/599663626)
+
+
+
 + the sample names is extracted from the BAM metadata
 + reads having a MAPQ>=30 and surounding the interval `chr7:27_135_310-27_135_339` are considered (not partial overlap).
 + for each read
